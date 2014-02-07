@@ -19,9 +19,21 @@
     this.email = 'Invalid Email';
     this.pattern = 'Illegal value';
   }
+  
+  function DefaultErrorMessagesDE() {
+    this.minlength = 'Der Text sollte mindestens {{minlength}} Zeichen lang sein.';
+    this.maxlength = 'Der Text darf nicht mehr {{maxlength}} als Zeichen lang sein.';
+    this.required = 'Bitte füllen Sie dieses Feld aus';
+    this.number = 'Dieses Feld darf nur Zahlen beinhalten';
+    this.min = 'Wert zu klein, Mindestwert: {{min}}';
+    this.max = 'Wert zu groß, Maximalwert: {{max}}';
+    this.email = 'Bitte geben Sie eine gültige E-Mail Adresse an';
+    this.pattern = 'Bitte geben Sie einen korrekten Wert ein';
+  }
+ 
 
   function ErrorMessages() {}
-  ErrorMessages.prototype = new DefaultErrorMessages();
+  ErrorMessages.prototype = new DefaultErrorMessagesDE();
   ErrorMessages.prototype.constructor = ErrorMessages;
 
   function InputValidator(scope, element, attrs, ngModel, formCtrl) {

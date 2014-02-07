@@ -1,4 +1,4 @@
-﻿/*
+/*
     xtForm
     --------------------------------------------------------------------------
     Creates validators and attaches them to inputs
@@ -28,7 +28,7 @@
     this.min = 'Wert zu klein, Mindestwert: {{min}}';
     this.max = 'Wert zu groß, Maximalwert: {{max}}';
     this.email = 'Bitte geben Sie eine gültige E-Mail Adresse an';
-    this.pattern = 'Bitte geben Sie einen korrekten Wert ein';
+    this.pattern = 'ungültige Eingabe';
   }
  
 
@@ -298,7 +298,7 @@
         var validator = new InputValidator(scope, element, attrs, ngModel, formCtrl);
         xtFormCtrl.validators.registerValidator(attrs.name, validator);
         element.on('$destroy', function() {
-          if (xtFormCtrl.validators.hasValidator(attrs.name)) {
+          if (xtFormCtrl.validators && xtFormCtrl.validators.hasValidator(attrs.name)) {
             xtFormCtrl.validators.deregisterValidator(attrs.name);
           }
         });
